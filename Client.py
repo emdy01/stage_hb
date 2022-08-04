@@ -31,16 +31,7 @@ class GUI():
         r=json.loads(response.text)
         self.status_ig.value=r['serveur']
         self.position_ig.value=r['position']        
-        print()
-        
-
-        
-
-
  
-        
-
-
     def launch(self): # pour le main
         self.app.display()
     
@@ -52,7 +43,7 @@ class GUI():
         r=json.loads(response.text)
         self.url_ig.value=urlup
         self.position_ig.value=r['position']
-        self.status_ig.value=r['msg']+" "+ str(response.status_code)
+        self.status_ig.value=r['msg']+" rc:"+ str(response.status_code)
         
     def down(self):
         n = self.pas_ig.value
@@ -62,7 +53,7 @@ class GUI():
         r=json.loads(response.text)
         self.url_ig.value=urlup
         self.position_ig.value=r['position']
-        self.status_ig.value=r['msg']+" "+ str(response.status_code)
+        self.status_ig.value=r['msg']+" rc:"+ str(response.status_code)
     
    
     def stopSystem(self):
