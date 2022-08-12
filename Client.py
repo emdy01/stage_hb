@@ -47,12 +47,12 @@ class GUI():
         self.app.display()
     
     def up(self):
-        #Envoi de la requête
+        # Construction de la requête
         n = self.pas_ig.value
         url_up=url+"/up/"+str(n)
         
-        #Réception de la réponse
-        response = requests.get(url_up)
+        #Envoi de la requête et réception de la réponse
+        response = requests.get(url_up) 
         r=json.loads(response.text)
         
         #Retranscription sur l'interface
